@@ -2,6 +2,12 @@
 # This file is part of GreatFET
 #
 
+import os
+import sys
+
+if sys.platform == "darwin":
+    os.environ["DYLD_FALLBACK_LIBRARY_PATH"] = "/opt/homebrew/lib/"
+
 from .board import GreatFETBoard
 
 # Ensure that we have access to all GreatFET boards. Normally, we'd avoid
